@@ -41,7 +41,7 @@ def lamentati(update: Update, context: CallbackContext) -> None:
         'Mi rifiuto di parlare di calcio con voi che non ne sapete un ca**o! \U0001F624',
         'Mi rifiuto di parlare con gente che non sa cosa significhi "pleonastico" \U0001F624',
         'La pizza napoletana mi ha stufato... a Milano esiste solo quella... \U0001F624',
-        'Non ho mai detto che la De Filippi sia bella, è una legenda metropolitana! \U0001F624',
+        'Non ho mai detto che la De Filippi sia bella, è una leggenda metropolitana! \U0001F624',
         'Quando lavoravo per il tizio di FI mi avete isolato tutti... \u2639\uFE0F',
         'Moggi era innocente! \U0001F624',
     ]
