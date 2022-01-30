@@ -34,7 +34,7 @@ def dicci_qualcosa(update: Update, context: CallbackContext) -> None:
     prob_dist = [single_prob * 2, ] + [single_prob] * (len(sentences) - 1)
     context.bot.send_message(message_id = update.message.message_id,
                             chat_id = update.message.chat_id,
-                            text = np.random.choice(sentences, 1, p=prob_dist)[0])
+                            text = np.random.choice(sentences, p=prob_dist))
 
 
 def lamentati(update: Update, context: CallbackContext) -> None:
@@ -49,7 +49,7 @@ def lamentati(update: Update, context: CallbackContext) -> None:
     ]
     context.bot.send_message(message_id = update.message.message_id,
                             chat_id = update.message.chat_id,
-                            text = random.choice(sentences))
+                            text = np.random.choice(sentences))
 
 
 
