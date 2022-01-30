@@ -2,9 +2,8 @@ from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 import os
-import random
+from numpy import random
 
-random.seed(2022)
 PORT = int(os.environ.get('PORT', 5000))
 TOKEN = os.environ["TOKEN"]
 
@@ -28,11 +27,14 @@ def dicci_qualcosa(update: Update, context: CallbackContext) -> None:
         u'\U0001F644',
         'L\'ho fatto/visto/sentito/scoperto/mangiato/visitato prima io!',
         'Eh vabbè...',
-        'Non ci penso proprio! \U0001F624',
+        'Non esiste \U0001F624',
+        'I tortellini solo in brodo'
     ]
+    single_prob = 1 / len(sentences) + 1
+    prob_dist = [single_prob * 2, ] + [single_prob] * len(sentences - 1)
     context.bot.send_message(message_id = update.message.message_id,
                             chat_id = update.message.chat_id,
-                            text = random.choice(sentences))
+                            text = random.choice(sentences, 1, p=prob_dist))
 
 
 def lamentati(update: Update, context: CallbackContext) -> None:
