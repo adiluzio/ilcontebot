@@ -31,7 +31,7 @@ def dicci_qualcosa(update: Update, context: CallbackContext) -> None:
         'I tortellini solo in brodo'
     ]
     single_prob = 1 / len(sentences) + 1
-    prob_dist = [single_prob * 2, ] + [single_prob] * len(sentences - 1)
+    prob_dist = [single_prob * 2, ] + [single_prob] * (len(sentences) - 1)
     context.bot.send_message(message_id = update.message.message_id,
                             chat_id = update.message.chat_id,
                             text = random.choice(sentences, 1, p=prob_dist))
